@@ -36,7 +36,7 @@ import java.nio.ByteBuffer;
  * TODO: needs more advanced shuttle controls (pause/resume, skip)
  */
 public class MoviePlayer {
-    private static final String TAG = MainActivity.TAG;
+    private static final String TAG = "MoviePlayer";
     private static final boolean VERBOSE = false;
 
     // Declare this here to reduce allocations.
@@ -110,6 +110,7 @@ public class MoviePlayer {
         MediaExtractor extractor = null;
         try {
             extractor = new MediaExtractor();
+            Log.d(TAG, "sourceFile : " + sourceFile.toString());
             extractor.setDataSource(sourceFile.toString());
             int trackIndex = selectTrack(extractor);
             if (trackIndex < 0) {

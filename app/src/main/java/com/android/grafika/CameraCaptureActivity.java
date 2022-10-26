@@ -127,7 +127,9 @@ import javax.microedition.khronos.opengles.GL10;
  */
 public class CameraCaptureActivity extends Activity
         implements SurfaceTexture.OnFrameAvailableListener, OnItemSelectedListener {
-    private static final String TAG = MainActivity.TAG;
+
+    private static final String TAG = "_CameraCaptureActivity";
+
     private static final boolean VERBOSE = false;
 
     // Camera filters; must match up with cameraFilterNames in strings.xml
@@ -154,7 +156,8 @@ public class CameraCaptureActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera_capture);
 
-        File outputFile = new File(getFilesDir(), "camera-test.mp4");
+//        File outputFile = new File(getFilesDir(), "camera-test.mp4");
+        File outputFile = new File(getExternalFilesDir(null), "camera-test.mp4");
         TextView fileText = (TextView) findViewById(R.id.cameraOutputFile_text);
         fileText.setText(outputFile.toString());
 
@@ -465,7 +468,7 @@ public class CameraCaptureActivity extends Activity
  * GLSurfaceView#queueEvent() call.
  */
 class CameraSurfaceRenderer implements GLSurfaceView.Renderer {
-    private static final String TAG = MainActivity.TAG;
+    private static final String TAG = "CameraSurfaceRenderer";
     private static final boolean VERBOSE = false;
 
     private static final int RECORDING_OFF = 0;

@@ -155,7 +155,8 @@ public class MainActivity extends ListActivity {
         for (String[] test : TESTS) {
             Map<String, Object> tmp = new HashMap<String, Object>();
             tmp.put(TITLE, test[0]);
-            tmp.put(DESCRIPTION, test[1]);
+//            tmp.put(DESCRIPTION, test[1]);
+            tmp.put(DESCRIPTION, test[1] + "\n->" + test[2]);
             Intent intent = new Intent();
             // Do the class name resolution here, so we crash up front rather than when the
             // activity list item is selected if the class name is wrong.
