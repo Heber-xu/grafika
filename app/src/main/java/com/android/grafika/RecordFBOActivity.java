@@ -95,7 +95,8 @@ import java.lang.ref.WeakReference;
  */
 public class RecordFBOActivity extends Activity implements SurfaceHolder.Callback,
         Choreographer.FrameCallback {
-    private static final String TAG = MainActivity.TAG;
+
+    private static final String TAG = "_RecordFBOActivity";
 
     // See the (lengthy) notes at the top of HardwareScalerActivity for thoughts about
     // Activity / Surface lifecycle management.
